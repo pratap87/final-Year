@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.cont-list {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Top-bg {
+    background: url('./photos/bg-img.png') no-repeat;
+    background-position: right top;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 600px;
+    z-index: -1;
+}
+
+.Top>.container {
+    margin-left: 10%;
+}
+
+@media (min-width: 768px) {
+    .Top-bg {
+        background-position: center center;
+        height: 800px;
+    }
+    .Top>.container {
+        margin-left: none;
+    }
+}
+
+.Top-title {
+    color: white;
+    font-size: 56px;
+    line-height: 56px;
+    font-weight: 900;
+    margin-top: -100px;
+}
+
+@media (min-width: 768px) {
+    .Top-title {
+        margin-top: 126px;
+        width: 583px;
+    }
+}
+
+.Top .container a .button {
+    margin-top: 48px;
+    margin-bottom: 130px;
+}
+
+@media (min-width: 768px) {
+    .Top .container a .button {
+        margin-bottom: 312px;
+    }
+}
