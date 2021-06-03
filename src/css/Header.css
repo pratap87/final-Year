@@ -8,6 +8,17 @@
     background: url('../photos/home-switch-button.svg') no-repeat center center;
 }
 
+.logo-img {}
+
+.logo-img img {
+    width: 80px;
+}
+
+.nav-wrapper {
+    background: #3f51b5;
+    color: black;
+}
+
 @media (min-width: 768px) {
     .Header-switch {
         display: none;

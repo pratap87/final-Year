@@ -14,6 +14,8 @@ import Button from './components/Button'
 import Service from './components/Services'
 import Card from './components/card'
 import HowItWork from './components/HowItwork'
+import firebase from "firebase";
+import cardDetails from './components/CardDeatils'
 
 const Garrage = () => {
   return(
@@ -23,19 +25,20 @@ const Garrage = () => {
           <Card
             img="repair-mechanism.png"
             name="Bajaj Auto Mobiles"
-            description="lorem"
+            description="Ghaziabad"
+            
 
           />
            <Card
             img="garage.png"
             name="Bajaj Auto Mobiles"
-            description="lorem"
+            description="muradnagar"
 
           />
            <Card
             img="img1.jpg"
             name="Bajaj Auto Mobiles"
-            description="lorem"
+            description="morta"
 
             />
         </div>
@@ -44,62 +47,38 @@ const Garrage = () => {
       
 }
 
-const  App=()=> {
+const App = () => {
+    const firebaseApp = firebase.apps[0];
   return(
     
    
-      <Router>
+    <Router>
+      
+      <Layout>
+        
+       <div className="Top">
+        <div className="Top-bg"></div>
+        <div className="container">
+          <h1 className="Top-title">
+            Top notch service is our main moto
+          </h1>
+          <Button text="MAKE AN APPOINTMENT" />
+        </div>
+      </div>
       <Switch>
         
-        <Route exact path="/">
-             <Layout>
-       <div className="Top">
-        <div className="Top-bg"></div>
-        <div className="container">
-          <h1 className="Top-title">
-            Top notch service is our main moto
-          </h1>
-          <Button text="MAKE AN APPOINTMENT" />
-        </div>
-      </div>
-            <Garrage />
-             </Layout>
-          </Route>
-        <Route exact path="/services">
-           <Layout>
-       <div className="Top">
-        <div className="Top-bg"></div>
-        <div className="container">
-          <h1 className="Top-title">
-            Top notch service is our main moto
-          </h1>
-          <Button text="MAKE AN APPOINTMENT" />
-        </div>
-      </div>
-            <Service />
-             </Layout>
-          </Route>
-          <Route path="/contact">
-             <Appointment />   
-          </Route>
+        <Route exact path="/" component={Garrage}/>
+        
+        <Route exact path="/services" component={Service}/>
+       
+             
+          <Route path="/contact" component={Appointment}/>
+              
     
-        <Route path="/work">
-                <Layout>
-       <div className="Top">
-        <div className="Top-bg"></div>
-        <div className="container">
-          <h1 className="Top-title">
-            Top notch service is our main moto
-          </h1>
-          <Button text="MAKE AN APPOINTMENT" />
-        </div>
-      </div>
-            <HowItWork />
-            </Layout>
-        </Route>
-
-
+        <Route path="/work" component={HowItWork}/>
+         <Route  path="/detail" component={cardDetails}/>   
         </Switch>
+              </Layout>
         </Router>
   
   )

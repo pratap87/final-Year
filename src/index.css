@@ -8,11 +8,14 @@ body {
 .cont {
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-top: 10%;
 }
 
 .cont-list {
+    margin: 10px;
     width: 90%;
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
 }
@@ -39,6 +42,9 @@ body {
     }
     .Top>.container {
         margin-left: none;
+    }
+    .cont-list {
+        width: 100%;
     }
 }
 
