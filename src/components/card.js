@@ -3,13 +3,14 @@ import './card.css'
 import StarRatings from 'react-star-ratings';
 import {Link} from 'react-router-dom'
 import Button from './Button';
-const card = (props) => {
+const card = ({i}) => {
+    console.log(i)
     return (
         <div className="card-cont">
-            <img src={props.img} className="shop-img" alt={ props.name}/>
+            <img src={i.img} className="shop-img" alt={ i.shop_name}/>
             <div className="details">
-                <h3>Shop Name:{props.name}</h3>
-                <h5>Address:    {props.description}</h5>
+                <h3>Shop Name:{i.shop_name}</h3>
+                <h5>Address:    {i.shop_Address}</h5>
                <span> Rating  <StarRatings
                     rating={4}
           starRatedColor="yellow"
@@ -21,7 +22,7 @@ const card = (props) => {
                    
                 </span>
                 <br/>
-                 <button className="btn" ><Link to="/detail">Book Now</Link></button>
+                 <button className="btn" ><Link to={{pathname:`/detail/${i.shop_id}`}}>Book Now</Link></button>
             </div>
         </div>
     )

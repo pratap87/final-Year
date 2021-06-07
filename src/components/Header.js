@@ -1,48 +1,43 @@
-import Button from './Button';
-import '../css/Header.css'
-const Header= () => {
-  return (
-    <header className="Header">
-      <div className="container">
-        <div className="Header-left">
-          <div className="Header-left-logo">
-            <a href="#">
-              <div className="logo"></div>
-            </a>
-          </div>
-        </div>
-        <div className="icon Header-switch" onClick={clickThat}>
-          <div className="button-icon Header-switch-icon"></div>
-        </div>
-        <div className="Header-right">
-          <div className="Header-right-section">
-            <img className="icon" src="/time.svg" alt="" />
-            <div className="text">
-              SERVICE HOURS
-              <br />
-              Mon - Sat: 7:00 am - 6:00 pm
-            </div>
-          </div>
-          <div className="Header-right-section">
-            <img className="icon" src="/phone.svg" alt="" />
-            <div className="text">
-              CALL US
-              <br />
-              (555) Car?Bike-Repair
-            </div>
-          </div>
-          <div className="Header-right-button">
-            <Button text="MAKE AN APPOINTMENT" />
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
+import { Menu } from 'antd';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import React from 'react'
+const { SubMenu } = Menu;
 
-function clickThat() {
-  var e = document.getElementById('switch');
-  e.classList.toggle('switch');
+class Header extends React.Component {
+   
+  handleClick = e => {
+    console.log('click ', e);
+    this.setState({ current: e.key });
+  };
+
+  render() {
+    const { current } = this.state;
+    return (
+      <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
+        <Menu.Item key="mail" icon={<MailOutlined />}>
+          Navigation One
+        </Menu.Item>
+        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
+          Navigation Two
+        </Menu.Item>
+        <SubMenu key="SubMenu" icon={<SettingOutlined />} title="Navigation Three - Submenu">
+          <Menu.ItemGroup title="Item 1">
+            <Menu.Item key="setting:1">Option 1</Menu.Item>
+            <Menu.Item key="setting:2">Option 2</Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title="Item 2">
+            <Menu.Item key="setting:3">Option 3</Menu.Item>
+            <Menu.Item key="setting:4">Option 4</Menu.Item>
+          </Menu.ItemGroup>
+        </SubMenu>
+        <Menu.Item key="alipay">
+          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+            Navigation Four - Link
+          </a>
+        </Menu.Item>
+      </Menu>
+    );
+  }
 }
 
-export default Header;
+export  default Header;

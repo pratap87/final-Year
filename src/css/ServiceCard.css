@@ -15,8 +15,9 @@
     @media (min-width: 768px) {
         .Servicecard {
             width: 30%;
+            display: flex;
             margin-top: 79px;
-            height: 340px;
+            height: auto;
             margin-left: initial;
             margin-right: initial;
         }

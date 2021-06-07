@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+ import db from './firebase.config';
+import React,{useState,useEffect} from 'react';
+ 
  import {
   BrowserRouter as Router,
   Switch,
@@ -14,41 +16,28 @@ import Button from './components/Button'
 import Service from './components/Services'
 import Card from './components/card'
 import HowItWork from './components/HowItwork'
-import firebase from "firebase";
+import Garrage from './garrage'
 import cardDetails from './components/CardDeatils'
-
-const Garrage = () => {
-  return(
-  <div className="cont">
-        <h1>Garrages Near You</h1>
-        <div className="cont-list">
-          <Card
-            img="repair-mechanism.png"
-            name="Bajaj Auto Mobiles"
-            description="Ghaziabad"
-            
-
-          />
-           <Card
-            img="garage.png"
-            name="Bajaj Auto Mobiles"
-            description="muradnagar"
-
-          />
-           <Card
-            img="img1.jpg"
-            name="Bajaj Auto Mobiles"
-            description="morta"
-
-            />
-        </div>
-    </div>
-  )
-      
-}
-
+ 
 const App = () => {
-    const firebaseApp = firebase.apps[0];
+  const [blogs, setBlogs] = useState([])
+  const shopref = db.ref('shop');
+  useEffect( () => {
+    shopref.on('value',(snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val())
+        setBlogs(snapshot.val())
+      }
+      else {
+        console.log("no data")
+      }
+    })
+    }, [])
+  
+  
+ 
+   
+  
   return(
     
    
@@ -60,14 +49,15 @@ const App = () => {
         <div className="Top-bg"></div>
         <div className="container">
           <h1 className="Top-title">
-            Top notch service is our main moto
+            Get Your Bike Serviced From Your Doorstep
           </h1>
           <Button text="MAKE AN APPOINTMENT" />
         </div>
       </div>
       <Switch>
         
-        <Route exact path="/" component={Garrage}/>
+        <Route exact path="/" component={()=><Garrage data={blogs}/>}
+        />
         
         <Route exact path="/services" component={Service}/>
        

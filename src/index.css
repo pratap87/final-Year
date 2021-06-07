@@ -5,29 +5,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.cont {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    margin-top: 10%;
-}
-
-.cont-list {
-    margin: 10px;
-    width: 90%;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-}
-
 .Top-bg {
-    background: url('./photos/bg-img.png') no-repeat;
-    background-position: right top;
+    background: url('./photos/mechanic_4x.webp') no-repeat;
     background-size: cover;
     position: absolute;
-    top: 0;
+    top: 72px;
     width: 100%;
-    height: 600px;
+    height: 500px;
     z-index: -1;
 }
 
@@ -38,7 +22,7 @@ body {
 @media (min-width: 768px) {
     .Top-bg {
         background-position: center center;
-        height: 800px;
+        height: 600px;
     }
     .Top>.container {
         margin-left: none;
@@ -49,16 +33,17 @@ body {
 }
 
 .Top-title {
-    color: white;
-    font-size: 56px;
+    color: black;
+    font-size: 30px;
     line-height: 56px;
     font-weight: 900;
-    margin-top: -100px;
+    margin-top: 200px;
 }
 
 @media (min-width: 768px) {
     .Top-title {
         margin-top: 126px;
+        font-size: 45px;
         width: 583px;
     }
 }

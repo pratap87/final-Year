@@ -7,9 +7,7 @@ function Servicecard(props) {
         <h4 className="Minicard-content-title Servicecard-content-title">
           {props.title}
         </h4>
-        <p className="Minicard-content-text Servicecard-content-text">
-          {props.text}
-        </p>
+         
       </div>
     </div>
   );

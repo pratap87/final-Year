@@ -1,20 +1,38 @@
-.detail-cont {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 10%;
-}
-
-.leftbox {
-    width: 50%;
-}
-
-.leftbox img {
-    width: 90%;
-}
-
-.boxxx {
-    display: flex;
-    flex-direction: row;
-    justify-content: space space-around;
-}
+    .detail-cont {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: 10%;
+    }
+    
+    .leftbox {
+        width: 50%;
+    }
+    
+    .leftbox img {
+        width: 90%;
+    }
+    
+    .boxxx {
+        display: flex;
+        flex-direction: row;
+        justify-content: space space-around;
+    }
+    
+    .cust {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .pricing {
+        margin-top: 50px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .custcard {
+            width: 100%;
+        }
+        .ant-col-8 {
+            flex: 1;
+        }
+    }

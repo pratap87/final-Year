@@ -1,5 +1,5 @@
  
-import Header from './Header';
+import Header from './Header/header';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -16,7 +16,7 @@ function Layout({ children }) {
         ></link>
        
       <Header />
-      <Navigation />
+     
       {children}
       <Footer />
     </div>
