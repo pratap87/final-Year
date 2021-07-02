@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import './card-details.css'
  import { Select,Checkbox} from 'antd';
+ import {Link} from 'react-router-dom'
 import image from '../photos/19396.jpg';
+
  
 import 'antd/dist/antd.css';
 import db from '../firebase.config';
@@ -43,7 +45,7 @@ const CardDeatils = () => {
     setPrice(price + i)
      
   }
-  
+
   
   function onChange(value) {
     setbname(value)
@@ -132,7 +134,7 @@ function onSearch(val) {
           <div className="cardprice">
             <div className="tile">Your Final Total Is<span>{price}</span></div>
              <button className="btn" >
-        checkout </button>
+        <Link to={{pathname:`/checkout/${price}`}}>Book Now</Link> </button>
       </div>
             </div>
         </div>

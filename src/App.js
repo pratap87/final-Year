@@ -18,7 +18,7 @@ import Card from './components/card'
 import HowItWork from './components/HowItwork'
 import Garrage from './garrage'
 import cardDetails from './components/CardDeatils'
- 
+import Checkout from './components/modal' 
 const App = () => {
   const [blogs, setBlogs] = useState([])
   const shopref = db.ref('shop');
@@ -67,6 +67,7 @@ const App = () => {
     
         <Route path="/work" component={HowItWork}/>
          <Route  path="/detail" component={cardDetails}/>   
+         <Route path="/checkout/:price"component ={Checkout}/>
         </Switch>
               </Layout>
         </Router>
