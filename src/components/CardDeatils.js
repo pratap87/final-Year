@@ -43,8 +43,7 @@ const CardDeatils = () => {
     setPrice(price + i)
      
   }
-  function onClick()
-  {}
+  
   
   function onChange(value) {
     setbname(value)
@@ -132,7 +131,7 @@ function onSearch(val) {
           </div>
           <div className="cardprice">
             <div className="tile">Your Final Total Is<span>{price}</span></div>
-             <button className="btn" onClick={}>
+             <button className="btn" >
         checkout </button>
       </div>
             </div>
