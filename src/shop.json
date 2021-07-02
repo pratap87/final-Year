@@ -42,48 +42,90 @@
              "Bikename": "Rolyal Enfield Bullet",
              "company": "Royal Enfiled",
              "serviceCharges": [{
-                 "Engineoil": "800",
-                 "washing": "200",
-                 "oiling": "400",
-                 "TireExchange": "1000"
+                     "ServiceName": "Engineoil",
+                     "price": 1200
+                 },
+                 {
+                     "ServiceName": "washing",
+                     "price": 400
+                 },
+                 {
+                     "ServiceName": "oiling",
+                     "price": 700
+                 },
+                 {
+                     "ServiceName": "Tire",
+                     "price": 2000
+                 }
 
-             }]
+
+             ]
          },
          {
              "Bikename": "Pulsar",
              "company": "Bajaj",
              "serviceCharges": [{
-                 "Engineoil": "700",
-                 "washing": "200",
-                 "oiling": "400",
-                 "TireExchange": "600"
+                     "ServiceName": "Engineoil",
+                     "price": 700
+                 },
+                 {
+                     "ServiceName": "washing",
+                     "price": 400
+                 },
+                 {
+                     "ServiceName": "oiling",
+                     "price": 400
+                 },
+                 {
+                     "ServiceName": "Tire",
+                     "price": 1900
+                 }
 
-             }]
+             ]
          },
          {
              "Bikename": "Splender",
              "company": "Hero",
              "serviceCharges": [{
-                 "Engineoil": "500",
-                 "washing": "200",
-                 "oiling": "400",
-                 "TireExchange": "800"
-
-             }]
+                     "ServiceName": "Engineoil",
+                     "price": 800
+                 },
+                 {
+                     "ServiceName": "washing",
+                     "price": 400
+                 },
+                 {
+                     "ServiceName": "oiling",
+                     "price": 700
+                 },
+                 {
+                     "ServiceName": "Tire",
+                     "price": 1000
+                 }
+             ]
          },
          {
              "Bikename": "TvS Victor",
              "company": "TvS",
              "serviceCharges": [{
-                 "Engineoil": "500",
-                 "washing": "200",
-                 "oiling": "400",
-                 "TireExchange": "700"
-
-             }]
+                     "ServiceName": "Engineoil",
+                     "price": 600
+                 },
+                 {
+                     "ServiceName": "washing",
+                     "price": 300
+                 },
+                 {
+                     "ServiceName": "oiling",
+                     "price": 500
+                 },
+                 {
+                     "ServiceName": "Tire",
+                     "price": 1000
+                 }
+             ]
          }
      ],
-
      "Shop-detail": [{
              "shop-id": "1",
              "shop_name": "Abc Bike Servicing",

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import './card-details.css'
- import { Select} from 'antd';
+ import { Select,Checkbox} from 'antd';
 import image from '../photos/19396.jpg';
  
 import 'antd/dist/antd.css';
@@ -12,7 +12,7 @@ const CardDeatils = () => {
   const [data, setData] = useState([])
   const [service,setservice]=useState([])
   const [bikeData,setBikeData]=useState([])
-  
+  const [price,setPrice]=useState(0)
 
    useEffect( () => {
     shopdetail.on('value',(snapshot) => {
@@ -37,6 +37,15 @@ const CardDeatils = () => {
    })  
     }, [])
 
+  function handleClick(i)
+  {
+    console.log(i)
+    setPrice(price + i)
+     
+  }
+  function onClick()
+  {}
+  
   function onChange(value) {
     setbname(value)
    const arr= bikeData.filter(item=>item.Bikename==value)
@@ -57,7 +66,7 @@ function onSearch(val) {
   console.log('search:', val);
 }
   const { Option } = Select;
-  console.log(service)
+  console.log(price)
     return (
         <div className="detail-cont">
             <h1>Shop Details</h1>
@@ -108,15 +117,27 @@ function onSearch(val) {
   
         </Select>
         <br/>
-        <h1>Select Services</h1><h2>bike Comapany :{ service[0].company}</h2>
+        <h1>Select Services</h1><h2>bike Comapany :{ bname && service[0].company}</h2>
         <div className="pricing">
           
           <div className="cardprice">
-            
+            {bname &&
+              service[0].serviceCharges.map(item => {
+                return(
+                  <div className="tile">{item.ServiceName}<span>{item.price}</span>  <button onClick={()=>handleClick(item.price)}
+                  >< i className="fa fa-cart-plus fa-2x"   /></button></div>
+                )
+              })
+            }
           </div>
-        </div>
-        
+          <div className="cardprice">
+            <div className="tile">Your Final Total Is<span>{price}</span></div>
+             <button className="btn" onClick={}>
+        checkout </button>
       </div>
+            </div>
+        </div>
+       
       
         
     )
